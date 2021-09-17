@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>JavaScript Tables</title>
+</head>
+
+<body>
+  <div id="output"></div>
+  <div class="dropdown">
+    <input type="checkbox" id="checkbox_toggle">
+    <label for="checkbox_toggle">Click to Expand</label>
+    <ul>
+      <li><a href="#">FCFS</a></li>
+      <li><a href="#">SJF</a></li>
+      <li><a href="#">Priority</a></li>
+      <li><a href="#">RR</a></li>
+    </ul>
+  </div>
+
+  <script>
+    // Initializing arrays
+    var arrival = [0,1,2,3,4,5,15];
+    var burst = [1,7,3,6,5,15,18];
+    var priority = [2,6,3,5,4,10,9];
+
+    // Getting output element
+    var output = document.getElementById('output');
+
+    // Creating table tags
+    var table = "<table><thead><tr><th> Process ID </th><th> Arrival Time </th><th> Burst Time </th><th> Priority </th></tr></thead><tbody>";
+
+    for (var i = 0; i < arrival.length; i++) {
+      table += "<tr><td>" + (i + 1) + "</td><td>" + arrival[i] + "</td><td>" + burst[i] + "</td><td>" + priority[i] + "</td></tr>";
+    }
+
+    table += "</tbody></table>";
+
+    // Binding output element with table var
+    output.innerHTML = table;
+  </script>
+</body>
+
+</html>
